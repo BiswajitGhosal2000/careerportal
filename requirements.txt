@@ -1,2 +1,5 @@
 Flask~=3.0.0
 gunicorn
+sqlalchemy~=2.0.25
+mysql-connector-python
+python-dotenv~=1.0.0

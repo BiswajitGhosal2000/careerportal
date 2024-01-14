@@ -1,7 +1,9 @@
-<tbody>
-<!--                <td>{{job['id']}}</td>-->
-<td>{{job['title']}}</td>
-<td>{{job['location']}}</td>
-<td>{{job['salary']}}</td>
-<td><a href="mailto:ghosalbiswajit1@gmail.com?subject=Application for {{job['title']}} ">Apply</a></td>
-</tbody>
+<div class="card my-4">
+  <img src="/static/uploads/profile.jpg" class="card-img-top" alt="profile">
+  <div class="card-body">
+    <b class="card-title">Job Title: {{job['title']}}</b>
+    <p class="card-text">Location: {{job['location']}}</p>
+    <p class="card-text">Salary: {{job['salary']}}</p>
+    <a href="mailto:ghosalbiswajit1@gmail.com?subject=Application for {{job['title']}}" class="btn btn-primary">Apply Now</a>
+  </div>
+</div>

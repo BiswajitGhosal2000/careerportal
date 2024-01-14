@@ -13,25 +13,23 @@
 
 <body>
 {% include 'navbar.html' %}
-<h1 class="text-center">{{company_name}}'s Career Portal</h1>
 
 <main class="container">
     <section class="my-2">
-        <img id="banner" src="/static/img/banner.jpg" height="400" width="1000">
+        {% include 'carousel.html' %}
     </section>
 
     <section class="row mt-2">
         <h2 class="text-center col-12">About Us </h2>
         <div class="col-md-6">
-            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a
-                type specimen book. It has survived not only five centuries, but also the leap into electronic
-                typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum
+            <p class="lead">
+                Welcome to Career Portal, where we are dedicated to connecting individuals with exciting career
+                opportunities. Our mission is to empower and guide individuals on their professional journey, assisting
+                them in finding fulfilling careers that match their skills, passions, and aspirations.
+                With a commitment to excellence, we strive to provide a user-friendly platform that bridges the gap
+                between talented individuals and employers seeking top-notch talent. Whether you are a job seeker
+                exploring new opportunities or an employer looking to build a dynamic team, Career Portal is your
+                trusted partner in the world of careers.
             </p>
         </div>
         <div class="d-none d-md-block col-md-6">
@@ -42,19 +40,14 @@
 
     <section>
         <h2 class="text-center">Open Positions</h2>
-        <table class="table table-hover">
-            <thead class="">
-            <!--            <th>Id</th>-->
-            <th>Title</th>
-            <th>Location</th>
-            <th>Salary</th>
-            <th>Action</th>
-            </thead>
+            <div class="row">
 
-            {% for job in jobs %}
-            {% include 'jobitem.html' %}
-            {% endfor %}
-        </table>
+                {% for job in jobs %}
+                <div class="col-3 mx-auto">
+                    {% include 'jobitem.html' %}
+                </div>
+                {% endfor %}
+            </div>
     </section>
 </main>
 {% include 'footer.html' %}
