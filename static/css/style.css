@@ -8,51 +8,8 @@ body {
 
 #banner {
   display: block;
-  margin: 0 auto; /* Center the image */
+  margin: 0 auto;
   border-radius: 10px;
   width:100%;
   object-fit:cover;
 }
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    flex: 1;
-    padding: 10px;
-}
-
-.footer-section h3 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.footer-section p {
-    color: #bbb;
-}
-
-.footer-section a {
-    color: #bbb;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-}
-
-.footer-bottom p {
-    margin: 0;
-}
-
