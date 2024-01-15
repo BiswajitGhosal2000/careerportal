@@ -10,10 +10,10 @@ client = MongoClient(mongo_uri)
 
 # Select your database and collection
 db = client.get_database("career")
-collection = db["jobs"]
 
 
 def load_jobs():
+    collection = db["jobs"]
     # Find all documents in the 'jobs' collection
     jobs = list(collection.find())
     return jobs
