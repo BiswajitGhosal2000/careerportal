@@ -1,5 +1,7 @@
 from flask import Flask, render_template, jsonify
-from database import load_jobs
+
+import database
+from database import load_jobs, get_job_by_id
 
 app = Flask(__name__)
 
@@ -16,6 +18,11 @@ def list_jobs():
     for job in jobs:
         job["_id"] = str(job["_id"])
     return jsonify(jobs)
+
+
+@app.route('/job/<id>')
+def job_by_id():
+    get_job_by_id()
 
 
 app.run(host='0.0.0.0', debug=True)
