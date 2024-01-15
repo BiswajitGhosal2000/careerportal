@@ -25,4 +25,4 @@ def job_by_id():
     get_job_by_id()
 
 
-app.run(host='0.0.0.0', debug=True)
+app.run()
