@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 from database import load_jobs
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def index():
 @app.route('/api/jobs')
 def list_jobs():
     jobs = load_jobs()
-    return jsonify(jobs)
+    return jobs
 
 
 app.run(host='0.0.0.0', debug=True)

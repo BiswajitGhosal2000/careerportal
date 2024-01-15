@@ -17,9 +17,3 @@ def load_jobs():
     # Find all documents in the 'jobs' collection
     jobs = list(collection.find())
     return jobs
-
-
-# Example usage:
-jobs_data = load_jobs()
-for job in jobs_data:
-    print(job)
