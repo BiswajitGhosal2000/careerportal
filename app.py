@@ -20,9 +20,12 @@ def list_jobs():
     return jsonify(jobs)
 
 
-@app.route('/job/<id>')
-def job_by_id():
-    get_job_by_id()
+@app.route('/job/<jobid>')
+def job_by_id(jobid):
+    job = get_job_by_id(jobid)
+    if not job:
+        return "Not Found", 404
+    return render_template('jobpage.html', job=job)
 
 
 app.run()

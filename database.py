@@ -22,12 +22,15 @@ def load_jobs():
 
 
 def get_job_by_id(job_id):
-    obj_id = ObjectId(job_id)
     collection = db['jobs']
+    try:
+        obj_id = ObjectId(job_id)
+    except:
+        return None
     job = collection.find_one({"_id": obj_id})
     if not job:
         return None
     return job
 
 
-# print(get_job_by_id("65a4483753d7e44af4b59ac7"))
+# print(get_job_by_id("65a4483753d7e44af4b59ac5"))

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/favicon/favicon.ico">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>{{job['title']}}-Career Portal</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+{% include 'carousel.html' %}
+
+<main class="container" style="min-height:83vh">
+    <h1 class="text-center">{{job.title}}</h1>
+    <h2>Responsibilities: </h2>
+    <ol>
+        {% for responsibility in job.responsibilities %}
+        <li>{{responsibility}}</li>
+        {% endfor %}
+    </ol>
+    <h2>Requirements:</h2>
+    <ul>
+        {% for requirement in job.requirements.split("\n") %}
+        <li>{{requirement}}</li>
+        {% endfor %}
+    </ul>
+</main>
+{% include 'footer.html' %}
+</body>
+</html>
