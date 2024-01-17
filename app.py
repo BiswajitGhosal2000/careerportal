@@ -28,4 +28,4 @@ def job_by_id(jobid):
     return render_template('jobpage.html', job=job)
 
 
-app.run(host="0.0.0.0/0", debug=True)
+app.run(host="0.0.0.0", debug=True)
