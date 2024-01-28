@@ -17,7 +17,6 @@ db = client.get_database("career")
 
 
 def load_jobs():
-    print("Connected to Data Base")
     collection = db["jobs"]
     # Find all documents in the 'jobs' collection
     jobs = list(collection.find())
@@ -56,7 +55,4 @@ def apply_job(jobid, form_data):
         response = collection_applications.insert_one(data_dict)
         return response.inserted_id
 
-
 # print(apply_job("65a4483753d7e44af4b59ac5", []))
-
-

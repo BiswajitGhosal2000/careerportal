@@ -12,21 +12,30 @@
 </head>
 <body>
 {% include 'navbar.html' %}
-{% include 'carousel.html' %}
 
 <main class="container" style="min-height:83vh">
+    {% include 'carousel.html' %}
     <h1 class="text-center">{{job.title}}</h1>
     <h2>Responsibilities: </h2>
     <ol>
+        {% if job.responsibilities %}
         {% for responsibility in job.responsibilities %}
-        <li>{{responsibility}}</li>
+        <li>{{ responsibility }}</li>
         {% endfor %}
+        {% else %}
+        <li>No Responsibilities Added</li>
+        {% endif %}
     </ol>
+
     <h2>Requirements:</h2>
     <ul>
+        {% if job.requirements %}
         {% for requirement in job.requirements.split("\n") %}
-        <li>{{requirement}}</li>
+        <li>{{ requirement }}</li>
         {% endfor %}
+        {% else %}
+        <li>No Requirements Added</li>
+        {% endif %}
     </ul>
 </main>
 <section class="container">
