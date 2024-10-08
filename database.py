@@ -1,10 +1,8 @@
-from flask import jsonify
 from pymongo import MongoClient
 from dotenv import load_dotenv
 from bson import ObjectId
 import os
 from werkzeug.datastructures import MultiDict
-import json
 
 load_dotenv()
 
@@ -14,6 +12,16 @@ client = MongoClient(mongo_uri)
 
 # Select your database and collection
 db = client.get_database("career")
+
+
+def sign_in(form_data):
+    data = MultiDict(form_data)
+    users_collection = db['users']
+    user = users_collection.find_one({'email': data['email']})
+    print(user)
+    if user:
+        return True
+    return False
 
 
 def load_jobs():
@@ -55,4 +63,12 @@ def apply_job(jobid, form_data):
         response = collection_applications.insert_one(data_dict)
         return response.inserted_id
 
-# print(apply_job("65a4483753d7e44af4b59ac5", []))
+
+def get_applications_by_job_id(job_id):
+    collection = db['applications']
+    try:
+        obj_id = ObjectId(job_id)
+    except:
+        return None
+    applications = list(collection.find({"job_id": obj_id}))
+    return applications
